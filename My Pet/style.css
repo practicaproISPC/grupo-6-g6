@@ -1,0 +1,33 @@
+:root{
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --logo: #7952B3;
+}
+
+body{
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+}
+.bg-dark{
+    background-color: var(--dark) !important;
+}
+.bg-dark-x{
+    background-color: var(--dark-x);
+}
+
+.form-control, .btn {
+    min-height: 3.125rem;
+    line-height: initial ;
+}
+.img-1{
+    background-image: url("/imagenes/carousel1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    color: var(--logo);
+    font-weight: 600;
+    font-size: 4rem;
+}
