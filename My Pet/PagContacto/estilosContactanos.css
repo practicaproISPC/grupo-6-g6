@@ -1,0 +1,39 @@
+:root{
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --logo: #7952B3;
+}
+body{
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+    background-color:var(--dark);
+}
+h1{
+content: var(--logo);
+}
+.container{
+    background-color:var(--dark);
+    
+}
+
+.jumbotron{
+    background-color: var(--dark-x);
+}
+
+.col-sm-5{
+    padding-top: 5%;
+}
+
+.col-sm-7{
+    background-color:var(--logo) ;
+    padding-top: 5%;
+}
+
+.row{
+    text-align: left;
+  
+}
+
+
