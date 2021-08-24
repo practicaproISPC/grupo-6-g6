@@ -14,75 +14,132 @@
 </head>
 
 <body class="body-dark bg-gray">
-  <section>
-    <div class="jumbotron text-left">
-      <div class="container-fluid bg-grey">
-        <h2 class="text-center">CONTACTA CON NOSOTROS</h2>
-        <div class="row">
-          <div class="col-sm-5">
-            <p>MyPet es un sistema de Gestión Integral desarrollado pensando exclusivamente en las necesidades de las
-              veterinarias.
-              Con este sistema podás gestionar clientes, historias clínicas, calendarios de vacunación, turnos, de
-              manera
-              más ordenada y eficiente.
-              Por dudas, consultas, o simplemente para solicitar más información contactanos!!! Te responderemos en un
-              plazo de 24 horas.
-            </p>
-          </div>
-          <div class="col-sm-7">
-            <div class="row">
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
-              </div>
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-              </div>
+  <header>
+    <a class="skip-main" href="#main">Saltar al contenido</a>
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container">
+        <a class="vincnav navbar-brand fw-bold" href="#"><img class="isotipoNav mx-3" src="/grupo-6-g6/Img/IsoLight.png"
+            alt="">My Pet</a>
+        <!--Acá tenemos que poner la dirección de la home-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
+            <li class="nav-item">
+              <a class="vincnav nav-link active fw-bold" aria-current="page" href="#">Ingreso para Veterinarias</a>
+            </li>
+            <li class="nav-item">
+              <a class="vincnav nav-link disabled" href="#" tabindex="-1" aria-disabled="true">App Dueños de
+                Mascotas</a>
+            </li>
+            <li class="nav-item">
+              <a class="vincnav nav-link active" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="jumbotron text-left">
+        <div class="container-fluid bg-grey">
+          <h2 class="text-center">CONTACTÁ CON NOSOTROS</h2>
+          <div class="row">
+            <div class="col-sm-5">
+              <p>MyPet es un sistema de Gestión Integral desarrollado pensando exclusivamente en las necesidades de las
+                veterinarias.
+                Con este sistema podrás gestionar clientes, historias clínicas, calendarios de vacunación, turnos, de
+                manera
+                más ordenada y eficiente.
+                Por dudas, consultas, o simplemente para solicitar más información contactanos!!! Te responderemos en un
+                plazo de 24 horas.
+              </p>
             </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Mensaje..."
-              rows="5"></textarea><br>
-            <div class="row">
-              <div class="col-sm-12 form-group">
-                <button class="btn btn-default pull-right" type="submit">Enviar</button>
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+              </div>
+              <textarea class="form-control" id="comments" name="comments" placeholder="Mensaje..."
+                rows="5"></textarea><br>
+              <div class="row">
+                <div class="col-sm-12 form-group">
+                  <button class="btn btn-default pull-right" type="submit">Enviar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-sm-3">
-          <h3>WALTER ONTIVERO</h3>
-          <p>Desarrollador</p>
-          <p>Contacto:</p>
-          <p><img src="linkedin.png" alt="" height="50" width="50"></p>
-          <p><img src="github.png" alt="" height="50" width="50" ><A HREF="https://github.com/wontivero"> wontivero</A></p>
+      <section id="contacto">
+        <div class="container w-50 m-auto text-center" id="equipo">
+          <h2 class="my-5 fs-2">Equipo pequeño con <span class="resaltado">resultados Grandes</span>.</h2>
+          <p class="fs-4 ">Te presentamos al equipo detrás de My Pet</p>
         </div>
-        <div class="col-sm-3">
-          <h3>LORENA RODRIGUEZ</h3>
-          <p>Desarrolladora</p>
-          <p>Contacto:</p>
-          <p><img src="linkedin.png" alt="" height="50" width="50"></p>
-          <p><img src="github.png" alt="" height="50" width="50" ><A HREF="https://github.com/Mlrod"> Mlrod</A></p>
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-sm-3">
+              <h3>WALTER ONTIVERO</h3>
+              <p>Desarrollador</p>
+              <p>Contacto:</p>
+              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Walter</A></p>
+              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/wontivero"> Github
+                  Walter</A></p>
+            </div>
+            <div class="col-sm-3">
+              <h3>LORENA RODRIGUEZ</h3>
+              <p>Desarrolladora</p>
+              <p>Contacto:</p>
+              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Lore</A></p>
+              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/Mlrod"> Mlrod</A></p>
+            </div>
+            <div class="col-sm-3">
+              <h3>GUADALUPE PADIN ROJAS</h3>
+              <p>Desarrolladora</p>
+              <p>Contacto:</p>
+              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Guada</A></p>
+              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/GPRNomade">
+                  GPRNomade</A>
+              </p>
+            </div>
+            <div class="col-sm-3">
+              <h3>CAROLINA FERNÁNDEZ</h3>
+              <p>Desarrolladora</p>
+              <p>Contacto:</p>
+              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Caro</A></p>
+              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/Carofgit"> Carofgit</A>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-3">
-          <h3>GUADALUPE PADIN ROJAS</h3>
-          <p>Desarrolladora</p>
-          <p>Contacto:</p>
-          <p><img src="linkedin.png" alt="" height="50" width="50"></p>
-          <p><img src="github.png" alt="" height="50" width="50" ><A HREF="https://github.com/GPRNomade"> GPRNomade</A></p>
-        </div>
-        <div class="col-sm-3">
-          <h3>CAROLINA FERNÁNDEZ</h3>
-          <p>Desarrolladora</p>
-          <p>Contacto:</p>
-          <p><img src="linkedin.png" alt="" height="50" width="50"></p>
-          <p><img src="github.png" alt="" height="50" width="50" ><A HREF="https://github.com/Carofgit"> Carofgit</A></p>
-        </div>
+      </section>
+  </main>
+  <footer>
+    <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+      <p class="fs-5 px-3  pt-3">My Pet. &copy; Todos Los Derechos Reservados 2021</p>
+      <a class="contactatefooter mx-3 fs-5" href="#">Contactate con nosotros</a>
+      <div id="iconos">
+        <a href="#" aria-label="Visita nuestra página de Facebook aquí"><img id="iconos"
+            src="/grupo-6-g6/Img/LogoFaceP1.png" alt=""></a>
+        <a href="#" aria-label="Visita nuestro perfil de Instagram aquí"><img id="iconos"
+            src="/grupo-6-g6/Img/LogoInstaP1.png" alt=""></a>
+        <a href="#" aria-label="Escribinos a nuestro Whastapp aquí"><img id="iconos"
+            src="/grupo-6-g6/Img/LogoWhatsP1.png" alt=""></a>
+        <a href="#" aria-label="Mandanos un mail aquí"><img id="iconos" src="/grupo-6-g6/Img/LogoMailP1.png" alt=""></a>
       </div>
-    </div>
-  </section>
+    </footer>
+
+  </footer>
+
 </body>
 
 </html>
