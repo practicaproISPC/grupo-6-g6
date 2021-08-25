@@ -4,13 +4,14 @@
 <head>
   <title>Contactanos</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="estilosContactanos.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="body-dark bg-gray">
@@ -18,7 +19,7 @@
     <a class="skip-main" href="#main">Saltar al contenido</a>
     <nav class="navbar navbar-expand-lg bg-transparent">
       <div class="container">
-        <a class="vincnav navbar-brand fw-bold" href="#"><img class="isotipoNav mx-3" src="/grupo-6-g6/Img/IsoLight.png"
+        <a class="vincnav navbar-brand fw-bold" href="#"><img class="isotipoNav mx-3" src="IsoLight.png"
             alt="">My Pet</a>
         <!--Acá tenemos que poner la dirección de la home-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -71,14 +72,14 @@
                 rows="5"></textarea><br>
               <div class="row">
                 <div class="col-sm-12 form-group">
-                  <button class="btn btn-default pull-right" type="submit">Enviar</button>
+                  <a class="vincnav btn" href="#">Enviar</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+    </section>
       <section id="contacto">
         <div class="container w-50 m-auto text-center" id="equipo">
           <h2 class="my-5 fs-2">Equipo pequeño con <span class="resaltado">resultados Grandes</span>.</h2>
@@ -91,23 +92,22 @@
               <h3>WALTER ONTIVERO</h3>
               <p>Desarrollador</p>
               <p>Contacto:</p>
-              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Walter</A></p>
-              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/wontivero"> Github
-                  Walter</A></p>
+              <p><img src="LogoLinkedInP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="https://www.linkedin.com/in/walter-ontivero/"> Walter</A></p>
+              <p><img src="LogoGithubP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="https://github.com/wontivero"> wontivero</A></p>
             </div>
             <div class="col-sm-3">
               <h3>LORENA RODRIGUEZ</h3>
               <p>Desarrolladora</p>
               <p>Contacto:</p>
-              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Lore</A></p>
-              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/Mlrod"> Mlrod</A></p>
+              <p><img src="LogoLinkedInP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="#"> Lorena</A></p>
+              <p><img src="LogoGithubP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="https://github.com/Mlrod"> Mlrod</A></p>
             </div>
             <div class="col-sm-3">
               <h3>GUADALUPE PADIN ROJAS</h3>
               <p>Desarrolladora</p>
               <p>Contacto:</p>
-              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Guada</A></p>
-              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/GPRNomade">
+              <p><img src="LogoLinkedInP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="#"> Guadalupe</A></p>
+              <p><img src="LogoGithubP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="https://github.com/GPRNomade">
                   GPRNomade</A>
               </p>
             </div>
@@ -115,8 +115,8 @@
               <h3>CAROLINA FERNÁNDEZ</h3>
               <p>Desarrolladora</p>
               <p>Contacto:</p>
-              <p><img src="linkedin.png" alt="" height="50" width="50"><A HREF="#"> Github Caro</A></p>
-              <p><img src="github.png" alt="" height="50" width="50"><A HREF="https://github.com/Carofgit"> Carofgit</A>
+              <p><img src="LogoLinkedInP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="www.linkedin.com/in/car0lina-fernández"> Carolina</A></p>
+              <p><img src="LogoGithubP1.png" alt="" height="50" width="50"><A class="vinculosredes" HREF="https://github.com/Carofgit"> Carofgit</A>
               </p>
             </div>
           </div>
@@ -129,12 +129,12 @@
       <a class="contactatefooter mx-3 fs-5" href="#">Contactate con nosotros</a>
       <div id="iconos">
         <a href="#" aria-label="Visita nuestra página de Facebook aquí"><img id="iconos"
-            src="/grupo-6-g6/Img/LogoFaceP1.png" alt=""></a>
+            src="LogoFaceP1.png" alt=""></a>
         <a href="#" aria-label="Visita nuestro perfil de Instagram aquí"><img id="iconos"
-            src="/grupo-6-g6/Img/LogoInstaP1.png" alt=""></a>
+            src="LogoInstaP1.png" alt=""></a>
         <a href="#" aria-label="Escribinos a nuestro Whastapp aquí"><img id="iconos"
-            src="/grupo-6-g6/Img/LogoWhatsP1.png" alt=""></a>
-        <a href="#" aria-label="Mandanos un mail aquí"><img id="iconos" src="/grupo-6-g6/Img/LogoMailP1.png" alt=""></a>
+            src="LogoWhatsP1.png" alt=""></a>
+        <a href="#" aria-label="Mandanos un mail aquí"><img id="iconos" src="LogoMailP1.png" alt=""></a>
       </div>
     </footer>
 

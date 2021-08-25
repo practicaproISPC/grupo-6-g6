@@ -26,14 +26,17 @@ font-weight: 700;
 h3{
     color: var(--colorFB);
 }
-.container{
-    background-color:var(--gris);  
+.btn{
+background-color: var(--bcolorNyV);
+color: var(--colorFVR);
 }
-
 .jumbotron{
-    background-color: var(--light);
+    background-color: var(--bcolorB);
+    padding: 2%;
 }
-
+.col-sm-3{
+    padding: 3%;
+}
 .col-sm-5{
     padding-top: 5%;
 }
@@ -44,8 +47,9 @@ h3{
 }
 
 .row{
-    text-align: left;
-  
+    text-align: left; 
+    flex-wrap: wrap;
+    display:flex;
 }
 a.skip-main {
     left:-999px;
@@ -103,7 +107,9 @@ a.skip-main:focus, a.skip-main:active {
 .vinculos:hover {
     color: var(--colorFVR) !important;
 }
-
+.vinculosredes{
+    color: var(--azulPaleta);
+}
 #contacto{
     border-top: 1px solid #45B6CC; 
 }
