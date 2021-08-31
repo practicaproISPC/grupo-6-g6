@@ -30,6 +30,13 @@ body{
     font-size: 2rem;
     color: var(--colorFVC) !important;
 }
+
+h1{
+    color: var(--colorFB);
+    font-weight: 700;
+
+    }
+
 h5{
     color: var(--logo);
     font-weight: 400;
@@ -55,9 +62,7 @@ h5{
 .vincnav:hover{
     color: var(--colorFVC);
 }
-.logo{
-    height: 30em;
-}
+
 .navbar {
     min-height: 25px;
     background-color: var(--bcolorNyV) !important;
@@ -89,7 +94,8 @@ h5{
     background-position: center;
 }
 .logo{
-    color: var(--logo);
+    color: var(--colorFB);
     font-weight: 900;
     font-size: 4rem;
+    height: 30em;
 }
