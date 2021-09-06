@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block content %}
+<!--{% extends "layout.html" %} {% block content %}-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,20 +6,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap"
+      rel="stylesheet">
     <title>registro de usuarios</title>
   </head>
-  <body>
+  <body class="body-dark bg-gray">
     <div class="container">
         <br>
-        <div class="row>">
-            <div class="col-md-10">
-                <h1 class="display-6 mt-3" > Datos de usuarios</h1>
-                <hr class=" bg-primary pt-0 mt-0 ">
-                <p class="">Ingresa los datos para crear un nuevo Usuario del Sistema </p>
-                <form class="row g-3 pt-4 mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="display-6 mt-6" > Datos de usuarios</h2>
+                <hr class=" bg-primary pt-0 mt-0 "></hr>
+                <p>Ingresa los datos para crear un nuevo Usuario del Sistema <p>
+                <form class="row g-3 pt-6 mt-4">
                   <div class="col-md-4">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre"  required>
@@ -54,32 +58,42 @@
                   <div class="col-md-5">
                        <label for="direc" class="form-label">Dirección</label>
                        <input type="text" class="form-control" id="direc" required>
-                       <!--<div class="invalid-feedback">
-                          Complete los Datos
-                       </div>-->
                   </div>
                   <div class="col-md-2">               
                     <label for="codigo" class="form-label">Código Postal</label>
                     <input type="text" class="form-control" id="codigo"  required>
                   </div>
                   <div class="col-md-5">               
-                    <label for="localidad" class="form-label">Localidad</label>
-                    <input type="text" class="form-control" id="localidad"  required>
+                      <label for="localidad" class="form-label">Localidad</label>
+                      <input type="text" class="form-control" id="localidad"  required>
                   </div>
-                  <!--<div class="col-md-5">               
-                    <label for="mascota" class="form-label">Mascota</label>
-                    <input type="text" class="form-control" id="mascota"  required>
-                  </div>-->
+
+
+                  <h4 class="display-7 mt-6" >Datos de Clave</h4>
+                  <hr class=" bg-primary pt-0 mt-0"></hr>
+                                      
+                  <div class="col-md-3">
+                      <label for="clave" class="form-label"> Ingrese una Clave</label>
+                      <input type="text" class="form-control" id="clave" required>
+                  </div>
+                  
+                  <div class="col-md-3">               
+                    <label for="repiteclave" class="form-label">Vuelve a ingresar la Clave</label>
+                    <input type="text" class="form-control" id="repiteclave"  required>
+                  </div>
+                  
+                  <div class="col-md-6">               
+                    <label for="repitemail" class="form-label">Vuelve a ingresar el mail</label>
+                    <input type="text" class="form-control" id="repitemail"  required>
+                  </div>
+
+                    
                   <div class="col-12">
                      <button class="btn btn-primary" type="submit">Guardar</button>
                   </div>
-            
-                  </div>
+ 
                 </form>
 
-                      
-                </form>
-        
               </div>
         <div>
     </div>
@@ -90,5 +104,3 @@
     
   </body>
 </html>
-
-{% endblock %}
