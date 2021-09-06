@@ -12,6 +12,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap"
     rel="stylesheet">
+    <script>
+      function hizoClick() {
+  var nombre = document.getElementById("name").value;
+  var correo = document.getElementById("email").value;
+  if (nombre == "" || correo == "") {
+      alert("Debes compeltar al menos tu nombre y tu correo"); 
+  } else {
+  alert("Tu mensaje Ha sido enviado!!!");
+  }
+}
+    </script>
 </head>
 
 <body class="body-dark bg-gray">
@@ -60,6 +71,7 @@
               </p>
             </div>
             <div class="col-sm-7">
+              <form action="#" method="GET">
               <div class="row">
                 <div class="col-sm-6 form-group">
                   <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" aria-label="Ingresa tu nombre" required>
@@ -72,9 +84,10 @@
                 rows="5"></textarea><br>
               <div class="row">
                 <div class="col-sm-12 form-group ">
-                  <a class="vincnav btn" href="#">Enviar</a>
+                  <button class="btn btn-primary" type="submit" onclick="hizoClick()">Enviar</button>
                 </div>
               </div>
+            </form>
             </div>
           </div>
         </div>
