@@ -27,46 +27,42 @@
         <p>Ingresa los datos para crear un nuevo Cliente<p>
 
         <form class="row g-3 pt-4 mt-4">
-          <div class="col-md-5">
+          <div class="col-md-4">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
+            <input type="text" class="form-control" name="nombre" id="nombre" required>
           </div>
           <div class="col-md-4 ">
             <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" required>
+            <input type="text" class="form-control" name="apellido" id="apellido" required>
           </div>
 
           <div class="col-md-3">
-            <label for="dni" class="form-label">D.N.I</label>
-            <input type="number" class="form-control" id="dni" required>
+            <label for="dni" class="form-label">DNI (sin puntos)</label>
+            <input type="text" class="form-control" name="dni" id="dni" placeholder="12345678" pattern="[0-9]{8}" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="telefono" class="form-label">Telefono (solo números)</label>
+            <input type="text" class="form-control" name="telefono" id="telefono" placeholder="0123456789" pattern="[0-9]{10}"  required>
+          </div>
+          
+          <div class="col-md-5">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" name="direccion" id="direccion" required>
           </div>
 
           <div class="col-md-4">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" class="form-control" id="telefono" required>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" id="email" required>
           </div>
-          <div class="col-md-5">
-            <label for="Mail" class="form-label">Mail</label>
-            <input type="text" class="form-control" id="Mail" required>
-          </div>
-          <div class="col-md-3">
-            <label for="cuil-cuit" class="form-label">CUIL/CUIT</label>
-            <input type="text" class="form-control" id="cuil-cuit" required>
-          </div>
-
-          <div class="col-md-5">
-            <label for="direc" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direc" required>
-
-          </div>
+          
           <div class="col-md-2">
-            <label for="codigo" class="form-label">Código Postal</label>
-            <input type="text" class="form-control" id="codigo" required>
+            <label for="id_mascota" class="form-label">Id Mascota(?)</label>
+            <input type="text" class="form-control" name="id_mascota" id="id_mascota" required>
           </div>
-          <div class="col-md-5">
-            <label for="localidad" class="form-label">Localidad</label>
-            <input type="text" class="form-control" id="localidad" required>
-          </div>
+
+          
+
 
 
 
