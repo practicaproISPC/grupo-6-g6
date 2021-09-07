@@ -107,21 +107,23 @@
 
         <!--Formulario Derecho-->
         <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100">
+          
           <div class="px-lg-5 pt-lg-4 pb-lg-3 w-100 mb-auto">
             <h1 class="fw-bold text-center">My Pet</h1>
           </div>
           <div class="px-lg-5 py-lg-4 px-5 w-100 mt-auto">
             <h1>Bienvenido</h1>
-            <form>
+            <form action="/store" method="post" enctype="multipart/form-data">
               <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label fw-bold"
                   >Email:</label
                 >
                 <input
                   type="email"
+                  name="txtEmail"
                   class="form-control border-0 mb-2"
                   placeholder="Ingresa tu Email"
-                  id="exampleInputEmail1"
+                  id="txtEmail"
                   aria-describedby="emailHelp"
                 />
 
@@ -131,9 +133,10 @@
                   >
                   <input
                     type="password"
+                    name="txtPass"
                     class="form-control border-0 mb-2"
                     placeholder="Ingresa tu Contraseña"
-                    id="exampleInputPassword1"
+                    id="txtPass"
                   />
                   <a
                     href="#"
@@ -145,8 +148,7 @@
               </div>
               <form action="/layout">
                 <button                  
-                  type="button"
-                  onclick="location.href = '/layout';"
+                  type="submit"                            
                   class="btn vincnav w-100"
                 >
                   Iniciar Sesión
@@ -158,6 +160,7 @@
             <p class="d-inline-block nb-0"></p>
             <a href="#" class="text-decoration-none fw-bold"></a>
           </div>
+        
         </div>
       </div>
     </section>
