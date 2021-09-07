@@ -39,14 +39,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
               <li class="nav-item">
-                <a class="vincnav nav-link active fw-bold" aria-current="page" href="/login">Ingreso para Veterinarias</a>
+                {% block sesion %}
+                  {% if inicioSesion == "True" %}
+                     <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Salir</a>
+                     
+                  {% else %} 
+                    <a class="vincnav nav-link active fw-bold" aria-current="page" href="/login">Ingreso para Veterinarias</a>
+                  {% endif %}
+                {% endblock sesion %}
+                
               </li>
               <li class="nav-item">
                 <a class="vincnav nav-link disabled" href="#" tabindex="-1" aria-disabled="true">App Dueños de
                   Mascotas</a>
               </li>
               <li class="nav-item">
-                <a class="vincnav nav-link active" href="#">Contacto</a>
+                <a class="vincnav nav-link active" href="/contactanos">Contacto</a>
               </li>
             </ul>
           </div>

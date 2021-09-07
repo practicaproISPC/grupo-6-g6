@@ -1,9 +1,11 @@
 from logging import debug
 from flask import Flask, render_template, redirect, url_for, request
 from datos.db import conexion
+from http import cookies
 
 
-
+cookie = cookies.SimpleCookie()
+cookie["inicioSecion"] = 'False'
 
 def obtenerUsuario(mail,clave):
     try:
@@ -43,24 +45,50 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    valor = (cookie["inicioSecion"].value)
+    return render_template('home.html', inicioSesion= valor)
 
 @app.route("/layout")
 def layout():
-    return render_template('layout.html')
+    valor = (cookie["inicioSecion"].value)
+    if valor=="True":
+        return render_template('layout.html', inicioSesion= valor)
+    else:
+        return render_template('login.html')
+
 
 @app.route('/login')
 def login():
     #ingresarDatos()
-    return render_template('login.html')
+    valor = (cookie["inicioSecion"].value)
+    if valor=="True":
+        return render_template('layout.html')
+    else:
+        return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    #Cabio el valor de la coockie a false
+    cookie["inicioSecion"] = 'False'
+    valor = (cookie["inicioSecion"].value)
+    return render_template('home.html', inicioSesion= valor)
+    
 
 @app.route('/contactanos')
 def contactanos():
-    return render_template('contactanos.html')
+    valor = (cookie["inicioSecion"].value)
+    print("VALOR CONTACT COOKIES: " + valor)
+    return render_template('contactanos.html', inicioSesion= valor)
 
 @app.route('/cargarUsuarios')
 def cargarUsuarios():
-    return render_template('cargarUsuarios.html')
+    valor = (cookie["inicioSecion"].value)
+    if valor=="True":
+        return render_template('cargarUsuarios.html', inicioSesion= valor)
+    else:
+        return render_template('login.html')
+
+    
 
 @app.route('/test')
 def test():
@@ -73,11 +101,15 @@ def storage():
 
 
     if obtenerUsuario(email,clave):
-        print(email)
-        print("HOLA DATOS CORRECTOSSS")
-        return render_template('layout.html')
-    else:    
-        return render_template('login.html')
+        #print(email)
+        #print("HOLA DATOS CORRECTOSSS")
+        cookie["inicioSecion"] = 'True'
+        valor = (cookie["inicioSecion"].value)
+        #print("COOKIE " + valor)
+        return render_template('layout.html', inicioSesion= valor)
+
+    else:   
+        return render_template('login.html',errorUsuario=True)
 
 
 
