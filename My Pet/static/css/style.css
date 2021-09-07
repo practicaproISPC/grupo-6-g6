@@ -30,7 +30,12 @@ body{
     font-size: 2rem;
     color: var(--colorFVC) !important;
 }
-
+#mensajeError{
+    color: red;
+    font-family: var(--fuenteMarca);
+    font-weight: 600;
+    font-size: 1rem;
+}
 h1{
     color: var(--colorFB);
     font-weight: 700;
