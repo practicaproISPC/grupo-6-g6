@@ -30,6 +30,11 @@ h3{
 background-color: var(--bcolorNyV);
 color: var(--colorFVR);
 }
+.consulta{
+    color: var(--azulPaleta);
+    
+}
+
 .jumbotron{
     background-color: var(--bcolorB);
     padding: 2%;
