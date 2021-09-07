@@ -2,10 +2,12 @@ from logging import debug
 from flask import Flask, render_template, redirect, url_for, request
 from datos.db import conexion
 from http import cookies
+from datetime import datetime
 
 
 cookie = cookies.SimpleCookie()
 cookie["inicioSecion"] = 'False'
+cookie["consultaEnviada"] = 'False'
 
 def obtenerUsuario(mail,clave):
     try:
@@ -25,20 +27,21 @@ def obtenerUsuario(mail,clave):
          print("Ocurrió un error al consultar: ", e)
 
 
-def ingresarDatos():
+def guardarConsulta(nombre,email, mensaje):
     try:
         with conexion.cursor() as cursor:
+            fecha = datetime.now()
             # En este caso no necesitamos limpiar ningún dato
-            cursor.execute("INSERT INTO Test VALUES ('Pedro');")
-
+            cursor.execute("INSERT INTO Consultas (nombre, email, mensaje, fecha) VALUES(?,?,?,?)",nombre, email,mensaje, fecha)
+            cookie["consultaEnviada"] = 'True'
             # Con fetchall traemos todas las filas
             #alumnos = cursor.fetchall()
             #print(alumnos)
             # Recorrer e imprimir                        
     except Exception as e:
          print("Ocurrió un error al consultar: ", e)
-    finally:
-        conexion.close()
+
+        
 
 
 app = Flask(__name__)
@@ -77,8 +80,11 @@ def logout():
 @app.route('/contactanos')
 def contactanos():
     valor = (cookie["inicioSecion"].value)
+    envio = cookie["consultaEnviada"].value
+    cookie["consultaEnviada"]="False"
+
     print("VALOR CONTACT COOKIES: " + valor)
-    return render_template('contactanos.html', inicioSesion= valor)
+    return render_template('contactanos.html', inicioSesion= valor, consultaEnviada= envio)
 
 @app.route('/cargarUsuarios')
 def cargarUsuarios():
@@ -98,8 +104,6 @@ def test():
 def storage():
     email=request.form['txtEmail']
     clave=request.form['txtPass']
-
-
     if obtenerUsuario(email,clave):
         #print(email)
         #print("HOLA DATOS CORRECTOSSS")
@@ -107,9 +111,22 @@ def storage():
         valor = (cookie["inicioSecion"].value)
         #print("COOKIE " + valor)
         return render_template('layout.html', inicioSesion= valor)
-
     else:   
         return render_template('login.html',errorUsuario=True)
+
+@app.route('/cotactoConsulta', methods=['POST'])
+def mensaje():
+    cookie["consultaEnviada"] = 'False'
+    email=request.form['txtEmail']
+    nombre=request.form['txtNombre']
+    mensaje=request.form['txtMensaje']
+    print(email, nombre, mensaje)
+
+    guardarConsulta(nombre,email,mensaje)
+
+    #print("COOKIE " + valor)
+    #return render_template('contactanos', inicioSesion= valor)
+    return redirect("/contactanos")
 
 
 

@@ -80,7 +80,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="vincnav nav-link active" href="#">Contacto</a>
+                <a class="vincnav nav-link active" href="/contactanos">Contacto</a>
               </li>
             </ul>
           </div>
@@ -105,13 +105,13 @@
                 </p>
               </div>
               <div class="col-sm-7">
-                <form action="#" method="GET">
+                <form action="/cotactoConsulta" method="POST" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-sm-6 form-group">
                       <input
                         class="form-control"
-                        id="name"
-                        name="name"
+                        id="txtNombre"
+                        name="txtNombre"
                         placeholder="Nombre"
                         type="text"
                         aria-label="Ingresa tu nombre"
@@ -121,8 +121,8 @@
                     <div class="col-sm-6 form-group">
                       <input
                         class="form-control"
-                        id="email"
-                        name="email"
+                        id="txtEmail"
+                        name="txtEmail"
                         placeholder="Email"
                         type="email"
                         aria-label="Ingresa tu correo electronico"
@@ -132,8 +132,8 @@
                   </div>
                   <textarea
                     class="form-control mt-3"
-                    id="comments"
-                    name="comments"
+                    id="txtMensaje"
+                    name="txtMensaje"
                     aria-label="Ingresa tu mensaje"
                     placeholder="Mensaje..."
                     rows="5"
@@ -148,6 +148,15 @@
                       >
                         Enviar
                       </button>
+                      <div class="consulta mt-3">
+                        {% block envio %}
+                        {% if consultaEnviada == "True" %}
+                          <h4 id="mensajeError">Su consulta fue enviada con exito.</h4>
+                        {% else %} 
+                          
+                        {% endif %}
+                        {% endblock envio %}
+                      </div>
                     </div>
                   </div>
                 </form>
