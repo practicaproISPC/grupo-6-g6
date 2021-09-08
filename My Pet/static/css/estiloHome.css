@@ -91,6 +91,10 @@ main{
 .logo{
     height: 22em;
 }
+.logoChico{
+    height: 18em;
+    
+}
 
 .servicios{
     border-radius: 50px;

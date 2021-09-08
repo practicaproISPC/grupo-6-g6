@@ -10,6 +10,14 @@
                 <h2 class="display-6 mt-6" > Datos de usuarios</h2>
                 <hr class=" bg-primary pt-0 mt-0 "></hr>
                 <p>Ingresa los datos para crear un nuevo Usuario del Sistema <p>
+                  <div class="consulta">
+                    {% block envio %}
+                    {% if usuarioGuardado == "True" %}
+                      <h4>Usuario Guardado con exito.</h4>
+                    {% endif %}
+                    {% endblock envio %}
+                  </div>
+
                 
                 <form class="row g-3 pt-6 mt-4" name="formUsuario" id="formUsuario" action="/usuarioData" method="post" enctype="multipart/form-data">
                   <div class="col-md-4">
@@ -24,10 +32,10 @@
                       <label for="categoria" class="form-label">Categoría</label>
                       <select class="form-select" name="txtCategoria" id="txtCategoria" required>
                         <option selected disabled value="">...</option>
-                        <option>Administrador</option>
-                        <option>Veterinario</option>
-                        <option>Asistente</option>
-                        <option>Cliente</option>
+                        <option value=1>Administrador</option>
+                        <option value=2>Veterinario</option>
+                        <option value=3>Asistente</option>
+                        <option value=4> Vendedor</option>
                       </select>
                   </div>
                   <div class="col-md-3">               
@@ -75,7 +83,6 @@
                     
                   <div class="col-12 mb-5">
                     <button class="btn btn-primary" onClick="comprobarClave(), comprobarMail(), guardarEnBD()" type="button"> Guardar </button>
-                    <button class="btn btn-primary d-none" onClick="comprobarClave(), comprobarMail()" type="submit"> GuardarBD </button>
 
                   </div>
  
@@ -134,4 +141,5 @@
     
   </body>
 </html>
+
 {% endblock %}

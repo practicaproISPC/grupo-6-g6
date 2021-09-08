@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../static/css/estiloHome.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="../static/Img/IsoDark.png"
+      type="image/x-icon"
+    />
+    <title>My Pet home</title>
+  </head>
+  <body>
+      
+
+<section class="px-5 text-left d-flex" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div
+            id="carouselExampleFade"
+            class="carousel slide carousel-fade m-auto d-inline"
+            data-bs-interval="1500"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../static/Img/LogoDark.png" class="logoChico" alt="" />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/Img/LogoLight.png"
+                  class="logoChico"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <h1 class="text-left py-5">My Pet</h1>
+          <h2 class="h2Hero mt-2 fs-1">
+            Sistema Integral de Gestión Veterinaria
+          </h2>
+          <p class="mt-5 fs-4">
+            Contá con la información de tus pacientes de manera rápida y
+            confiable.<br />
+            En cualquier lugar, en cualquier momento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+{% endblock %}
