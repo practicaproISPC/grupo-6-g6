@@ -41,7 +41,7 @@
               <li class="nav-item">
                 {% block sesion %}
                   {% if inicioSesion == "True" %}
-                     <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Salir</a>
+                     <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Cerrar Sesión</a>
                      
                   {% else %} 
                     <a class="vincnav nav-link active fw-bold" aria-current="page" href="/login">Ingreso para Veterinarias</a>
@@ -72,25 +72,25 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column sidebar">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="/dashboard">
                 <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
+                Dashboard <span class="sr-only"></span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/cargarUsuarios">
                 <span data-feather="file"></span>
-                 Nuevo Usuario
+                 Agregar Usuario
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="cargaClientes">
                 <span data-feather="shopping-cart"></span>
                 Agregar Cliente
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="cargaMascotas">
                 <span data-feather="users"></span>
                 Agregar mascota
               </a>

@@ -24,6 +24,10 @@ body{
     color: var(--colorFB);
     background-color: var(--bcolorB) !important;
 }
+.consulta{
+    color: var(--azulPaleta);
+    
+}
 .logoMini{
     font-family: var(--fuenteMarca);
     font-weight: 600;

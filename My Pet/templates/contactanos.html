@@ -59,7 +59,7 @@
               {% block sesion %}
                     {% if inicioSesion == "True" %}
                     <li class="nav-item"></li>
-                       <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Salir</a>
+                       <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Cerrar Sesión</a>
                     </li>
                     <li class="nav-item"></li>
                        <a class="vincnav nav-link active fw-bold" aria-current="page" href="/layout">Sistema</a>
@@ -166,7 +166,7 @@
                       <div class="consulta mt-3">
                         {% block envio %}
                         {% if consultaEnviada == "True" %}
-                          <h4 id="mensajeError">Su consulta fue enviada con exito.</h4>
+                          <h4>Su consulta fue enviada con exito.</h4>
                         {% else %} 
                           
                         {% endif %}
