@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 cookie = cookies.SimpleCookie()
-cookie["inicioSecion"] = 'False'
+cookie["inicioSesion"] = 'False'
 cookie["consultaEnviada"] = 'False'
 
 def obtenerUsuario(mail,clave):
@@ -48,12 +48,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    valor = (cookie["inicioSecion"].value)
+    valor = (cookie["inicioSesion"].value)
     return render_template('home.html', inicioSesion= valor)
 
 @app.route("/layout")
 def layout():
-    valor = (cookie["inicioSecion"].value)
+    valor = (cookie["inicioSesion"].value)
     if valor=="True":
         return render_template('layout.html', inicioSesion= valor)
     else:
@@ -63,23 +63,23 @@ def layout():
 @app.route('/login')
 def login():
     #ingresarDatos()
-    valor = (cookie["inicioSecion"].value)
+    valor = (cookie["inicioSesion"].value)
     if valor=="True":
-        return render_template('layout.html')
+        return render_template('layout.html', inicioSesion= valor)
     else:
-        return render_template('login.html')
+        return render_template('login.html', inicioSesion= valor)
 
 @app.route('/logout')
 def logout():
     #Cabio el valor de la coockie a false
-    cookie["inicioSecion"] = 'False'
-    valor = (cookie["inicioSecion"].value)
+    cookie["inicioSesion"] = 'False'
+    valor = (cookie["inicioSesion"].value)
     return render_template('home.html', inicioSesion= valor)
     
 
 @app.route('/contactanos')
 def contactanos():
-    valor = (cookie["inicioSecion"].value)
+    valor = (cookie["inicioSesion"].value)
     envio = cookie["consultaEnviada"].value
     cookie["consultaEnviada"]="False"
 
@@ -88,7 +88,7 @@ def contactanos():
 
 @app.route('/cargarUsuarios')
 def cargarUsuarios():
-    valor = (cookie["inicioSecion"].value)
+    valor = (cookie["inicioSesion"].value)
     if valor=="True":
         return render_template('cargarUsuarios.html', inicioSesion= valor)
     else:
@@ -107,8 +107,8 @@ def storage():
     if obtenerUsuario(email,clave):
         #print(email)
         #print("HOLA DATOS CORRECTOSSS")
-        cookie["inicioSecion"] = 'True'
-        valor = (cookie["inicioSecion"].value)
+        cookie["inicioSesion"] = 'True'
+        valor = (cookie["inicioSesion"].value)
         #print("COOKIE " + valor)
         return render_template('layout.html', inicioSesion= valor)
     else:   
@@ -128,6 +128,25 @@ def mensaje():
     #return render_template('contactanos', inicioSesion= valor)
     return redirect("/contactanos")
 
+
+@app.route('/usuarioData', methods=['POST'])
+def usuarioData():
+    cookie["consultaEnviada"] = 'False'
+    nombre=request.form['txtNombre']
+    Apellido=request.form['txtApellido']
+    Categoria=request.form['txtCategoria']
+    Dni=request.form['txtDni']
+    Celular=request.form['txtCelular']
+    Direccion=request.form['txtDireccion']
+    email=request.form['txtEmail']
+    Clave=request.form['txtClave']
+
+    print(email, nombre)
+
+    #guardarConsulta(nombre,email,mensaje)
+    #print("COOKIE " + valor)
+    #return render_template('contactanos', inicioSesion= valor)
+    return redirect("/contactanos")
 
 
 if __name__ == '__main__':
