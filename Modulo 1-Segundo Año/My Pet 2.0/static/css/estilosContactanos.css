@@ -1,0 +1,143 @@
+:root{
+    --fuenteMarca: 'Cabin', sans-serif; 
+    --fuenteBase: 'Varta', sans-serif;  /* PARA BAJARLAS EN EL .HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap" rel="stylesheet">*/
+    
+    --colorFB: #454150;              /* color Fuente de textos Base  */
+    --colorFVC: #45B6CC;             /* color Fuente Celeste, para Vinculos de la Página, y hover de las nav  */
+    --colorFVR: #FFE4E9;             /* color Fuente Rosa, para Vinculos de las Nav, y Hover de la Página  */  
+    --bcolorB: #F5F5F5;              /*backgrond color Base, es decir, de TODA la página*/
+    --bcolorNyV: #454150;            /* background color de las Navs y los Vinculos de la Página*/
+    --azulPaleta: #0C479D;           /*color extra*/
+    --fucsiaPaleta: #FC6294;         /*color extra*/
+    --cremaPaleta: #FCF5E3;          /*color extra*/
+}
+body{
+    font-family: var(--fuenteBase);
+    font-weight: 300;
+    color: var(--colorFB);
+    background-color:var(--bcolorB);
+}
+h2{
+color: var(--colorFB);
+font-weight: 700;
+}
+h3{
+    color: var(--colorFB);
+}
+.btn{
+background-color: var(--bcolorNyV);
+color: var(--colorFVR);
+}
+.consulta{
+    color: var(--azulPaleta);
+    
+}
+
+.jumbotron{
+    background-color: var(--bcolorB);
+    padding: 2%;
+}
+.col-sm-3{
+    padding: 3%;
+}
+.col-sm-5{
+    padding-top: 5%;
+}
+
+.col-sm-7{
+    background-color:var(--fondo) ;
+    padding-top: 5%;
+}
+
+.row{
+    text-align: left; 
+    flex-wrap: wrap;
+    display:flex;
+}
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+
+a.skip-main:focus, a.skip-main:active {
+    color: var(--colorFB);
+    background-color:#45B6CC;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 5px;
+    border:2px solid #45B6CC;
+    text-align:center;
+    font-size: 1.5em;
+    z-index:999;
+}
+
+.vincnav{
+    color: var(--colorFVR);
+}
+.vincnav:hover{
+    color: var(--colorFVC);
+}
+
+.navbar {
+    min-height: 25px;
+    background-color: var(--bcolorNyV) !important;
+    border-bottom: 1px solid #45B6CC;
+}
+
+.isotipoNav{
+    max-height: 50px;
+}
+.vinculos{
+    background-color: var(--bcolorNyV) !important; 
+    color:   var(--colorFVC);
+    text-align: center;
+    font:  bold 1.5rem var(--fuenteBase);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vinculos:hover {
+    color: var(--colorFVR) !important;
+}
+.vinculosredes{
+    color: var(--azulPaleta);
+}
+#contacto{
+    border-top: 1px solid #45B6CC; 
+}
+
+
+footer {
+    background: var(--bcolorNyV);
+    max-height: 75px;
+}
+footer p{
+    color:var(--colorFVR);
+    text-align:center;
+}
+
+.contactatefooter{
+    color:var(--colorFVR);
+}
+
+.contactatefooter:hover{
+    color: var(--colorFVC);
+}
+
+#iconos {
+    max-height: 30px;
+    padding: 0.8px;
+}

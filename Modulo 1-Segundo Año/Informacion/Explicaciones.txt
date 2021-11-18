@@ -1,0 +1,27 @@
+El error import pyodbc se soluciona usando la version python 3.7
+
+Si aparece error import flask usar:
+pip install Flask
+
+El archivo script es para crear la bd en sql server, falta crear tabla de turnos, y los ABM de todas las entidades.
+
+Los videos usados para crear el login en sql y la conexion a la bd:
+https://www.youtube.com/watch?v=TPa2jt3_8gw&t=180s
+https://www.youtube.com/watch?v=UY8nWieArI4
+
+Usuario y contraseña para la BD:
+admin
+123
+
+Usuario y contraseña gmail:
+mypetgestionvet@gmail.com
+Tecnicatura2021
+
+Heroku:
+mypetgestionvet@gmail.com
+MyPet2021*
+
+Cuando levantamos el sistema usando el index, el usuario y la contraseña para el login:
+mypetgestionvet@gmail.com
+Admin
+
