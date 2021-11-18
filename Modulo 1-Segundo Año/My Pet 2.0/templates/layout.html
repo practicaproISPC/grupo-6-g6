@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!--CCS Personal-->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />  -->
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Vet</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container">
+          <a class="vincnav navbar-brand fw-bold" href="/"><img class="isotipoNav mx-3" src="../static/Img/IsoLight.png"
+              alt="">My Pet</a>
+          <!--Acá tenemos que poner la dirección de la home-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
+              <li class="nav-item">
+                {% block sesion %}
+                  {% if inicioSesion == "True" %}
+                     <a class="vincnav nav-link active fw-bold" aria-current="page" href="/logout">Cerrar Sesión</a>
+                     
+                  {% else %} 
+                    <a class="vincnav nav-link active fw-bold" aria-current="page" href="/login">Ingreso para Veterinarias</a>
+                  {% endif %}
+                {% endblock sesion %}
+                
+              </li>
+              <li class="nav-item">
+                <a class="vincnav nav-link disabled" href="#" tabindex="-1" aria-disabled="true">App Dueños de
+                  Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="vincnav nav-link active" href="/contactanos">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+<!-- SIDEBAR -->
+
+
+
+<div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column sidebar">
+            <li class="nav-item">
+              <a class="nav-link active" href="/dashboard">
+                <span data-feather="home"></span>
+                Dashboard <span class="sr-only"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cargarUsuarios">
+                <span data-feather="file"></span>
+                 Agregar Usuario
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cargaClientes">
+                <span data-feather="shopping-cart"></span>
+                Agregar Cliente
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cargaMascotas">
+                <span data-feather="users"></span>
+                Agregar mascota
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="otorgarTurnos">
+                <span data-feather="bar-chart-2"></span>
+                Otorgar Turnos
+              </a>
+            </li>
+            <!--Para futura ampliación del dashboard:
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Integrations
+              </a>
+            </li>
+            -->
+          </ul>
+
+          
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"> -->
+           
+            {% block content %} {% endblock %}
+
+
+        </div>
+        </div>
+
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

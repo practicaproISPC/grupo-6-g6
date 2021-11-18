@@ -1,9 +1,9 @@
 import pyodbc
 
-direccion_servidor = 'newmypetdb.cdielgixw4nb.us-east-2.rds.amazonaws.com, 1433'
-nombre_bd = 'MyPetDB'
+direccion_servidor = 'localhost'
+nombre_bd = 'MyPet'
 nombre_usuario = 'admin'
-password = 'admin2021'
+password = '123'
 try:
     conexion = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + 
                             direccion_servidor+';DATABASE='+nombre_bd+';UID='+nombre_usuario+';PWD=' + password)
