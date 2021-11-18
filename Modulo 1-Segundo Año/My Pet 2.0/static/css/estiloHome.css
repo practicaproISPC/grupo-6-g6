@@ -1,0 +1,241 @@
+:root{
+    --fuenteMarca: 'Cabin', sans-serif; 
+    --fuenteBase: 'Varta', sans-serif;  /* PARA BAJARLAS EN EL .HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap" rel="stylesheet">*/
+    
+    --colorFB: #454150;              /* color Fuente de textos Base  */
+    --colorFVC: #45B6CC;             /* color Fuente Celeste, para Vinculos de la Página, y hover de las nav  */
+    --colorFVR: #FFE4E9;             /* color Fuente Rosa, para Vinculos de las Nav, y Hover de la Página  */  
+    --bcolorB: #F5F5F5;              /*backgrond color Base, es decir, de TODA la página*/
+    --bcolorNyV: #454150;            /* background color de las Navs y los Vinculos de la Página*/
+    --azulPaleta: #0C479D;           /*color extra*/
+    --fucsiaPaleta: #FC6294;         /*color extra*/
+    --cremaPaleta: #FCF5E3;          /*color extra*/
+}
+
+
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+a.skip-main:focus, a.skip-main:active {
+    color: var(--colorFB);
+    background-color:#45B6CC;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 5px;
+    border:2px solid #45B6CC;
+    text-align:center;
+    font-size: 1.5em;
+    z-index:999;
+}
+
+.vincnav{
+    color: var(--colorFVR);
+}
+.vincnav:hover{
+    color: var(--colorFVC);
+}
+
+.navbar {
+    min-height: 25px;
+    background-color: var(--bcolorNyV) !important;
+    border-bottom: 1px solid #45B6CC;
+}
+
+.isotipoNav{
+    max-height: 50px;
+}
+
+#hero{
+    padding: 6em 0em 6em 8em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+    font: bold 80px var(--fuenteMarca) !important;
+    word-spacing: 15px;
+    letter-spacing: 3px;
+    color: var(--colorFB) !important;
+}
+.h2Hero{
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
+.resaltado{
+    color: #45B6CC;
+}
+
+main{
+    font-family: var(--fuenteBase);
+    color: var(--colorFB) !important;
+    background-color: var(--bcolorB);
+}
+
+.content{
+    max-width: 500px;
+}
+
+.logo{
+    height: 22em;
+}
+.logoChico{
+    height: 18em;
+    
+}
+
+.servicios{
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.isotipoMain{
+    max-height: 100px;
+}
+
+.imgVetDuenos{
+    max-width: 110%;
+}
+
+.lista{
+    list-style: none;
+    list-style-position: outside;
+    font-size: 1.2em;
+    margin-left: 2em;
+}
+
+.elemLista{
+    padding-bottom: 1px !important;
+}
+
+.elemLista::before {
+    content: "•"; /* Insert content that looks like bullets    "•" */
+    
+    font-size: 40px;
+    padding-right: 0.3em;
+    margin-top: 0px;
+    color: var(--bcolorNyV);
+}
+
+.vinculos{
+    background-color: var(--bcolorNyV) !important; 
+    color:   var(--colorFVC);
+    text-align: center;
+    font:  bold 1.5rem var(--fuenteBase);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vinculos:hover {
+    color: var(--colorFVR) !important;
+}
+
+#contacto{
+    border-top: 1px solid #45B6CC; 
+}
+
+
+footer {
+    background: var(--bcolorNyV);
+    max-height: 75px;
+}
+footer p{
+    color:var(--colorFVR);
+    text-align:center;
+}
+
+.contactatefooter{
+    color:var(--colorFVR);
+}
+
+.contactatefooter:hover{
+    color: var(--colorFVC);
+}
+
+#iconos {
+    max-height: 30px;
+    padding: 0.8px;
+}
+
+@media (max-width:992px){
+    
+    .servicio-fila{
+        width: 100% !important;
+        text-align: center;
+    }
+    .lista{
+        text-align: left;
+    }
+    .icono-wrap{
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+    .imgVetDuenos{
+        max-width: 50%;
+    }
+}
+
+
+@media (max-width:768px){
+    #hero{
+        text-align: center;
+        justify-content: center;
+        font: 70%;
+    }
+    .servicio-fila{
+        width: 100% !important;
+        text-align: center;
+        font-size: 50%;
+    }
+    .icono-wrap{
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+    .imgVetDuenos{
+        max-width: 250px;
+    }
+    .lista{
+        text-align: left;
+    }
+    .vinculos{
+        font-size: 3em;
+        padding: 20px;
+        display: flex;
+    }
+    #contacto{
+        display: none;
+    }
+}
+
+
+
+@media (max-width:576px){
+    .icono-wrap{
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+    .imgVetDuenos{
+        display: none;
+    }
+    .vinculos{
+        font-size: 2.2em !important;
+        padding: 15px;
+    }
+    #contacto{
+        display: none;
+    }
+    
+}

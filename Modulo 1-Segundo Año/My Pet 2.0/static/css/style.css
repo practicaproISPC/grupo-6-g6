@@ -1,0 +1,110 @@
+:root{
+    --fuenteMarca: 'Cabin', sans-serif; 
+    --fuenteBase: 'Varta', sans-serif;  /* PARA BAJARLAS EN EL .HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap" rel="stylesheet">*/
+    
+    --colorFB: #454150;              /* color Fuente de textos Base  */
+    --colorFVC: #45B6CC;             /* color Fuente Celeste, para Vinculos de la Página, y hover de las nav  */
+    --colorFVR: #FFE4E9;             /* color Fuente Rosa, para Vinculos de las Nav, y Hover de la Página  */  
+    --bcolorB: #F5F5F5;              /*backgrond color Base, es decir, de TODA la página*/
+    --bcolorNyV: #454150;            /* background color de las Navs y los Vinculos de la Página*/
+    --azulPaleta: #0C479D;           /*color extra*/
+    --fucsiaPaleta: #FC6294;         /*color extra*/
+    --cremaPaleta: #FCF5E3;          /*color extra*/
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --logo: #7952B3;
+}
+
+body{
+    font-family: var(--fuenteMarca);
+    font-weight: 300;    
+    color: var(--colorFB);
+    background-color: var(--bcolorB) !important;
+}
+.consulta{
+    color: var(--azulPaleta);
+    
+}
+.logoMini{
+    font-family: var(--fuenteMarca);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--colorFVC) !important;
+}
+#mensajeError{
+    color: red;
+    font-family: var(--fuenteMarca);
+    font-weight: 600;
+    font-size: 1rem;
+}
+h1{
+    color: var(--colorFB);
+    font-weight: 700;
+
+    }
+
+h5{
+    color: var(--logo);
+    font-weight: 400;
+    font-size: 1.5rem;
+    /*text-shadow: 1px 0.5px var(--light);*/
+    background-color: #ffffff;
+    }
+
+.bg-dark{
+    background-color: var(--bcolorNyV) !important;
+}
+.bg-dark-x{
+    background-color: var(--dark-x);
+}
+
+.form-control, .btn {
+    min-height: 3.125rem;
+    line-height: initial ;
+}
+.vincnav{
+    color: var(--colorFVR);
+}
+.vincnav:hover{
+    color: var(--colorFVC);
+}
+
+.navbar {
+    min-height: 25px;
+    background-color: var(--bcolorNyV) !important;
+    border-bottom: 1px solid #45B6CC;
+}
+
+.isotipoNav{
+    max-height: 50px;
+}
+
+.btn{
+    background-color: var(--bcolorNyV);
+    color: var(--colorFVR);
+    }
+
+.img-1{
+    background-image: url("../imagenes/carousel1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.img-2{
+    background-image: url("../imagenes/carousel2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.img-3{
+    background-image: url("../imagenes/carousel3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    color: var(--colorFB);
+    font-weight: 900;
+    font-size: 4rem;
+    height: 30em;
+}
