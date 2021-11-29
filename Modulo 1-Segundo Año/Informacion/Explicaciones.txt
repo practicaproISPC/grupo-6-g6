@@ -25,3 +25,6 @@ Cuando levantamos el sistema usando el index, el usuario y la contraseña para e
 mypetgestionvet@gmail.com
 Admin
 
+https://mypetvet.herokuapp.com/static/templates/home.html para desplegar la app en heroku (voy reemplazando el "home" por las disntintas paginas)
+
+http://localhost:3000/static/templates/home.html   para ver las paginas en el localhost (reemplazo el "home" por los nombres de las otras paginas)
