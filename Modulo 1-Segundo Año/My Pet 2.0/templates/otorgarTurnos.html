@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/My Pet 2.0/static/css/otStyle.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
   <!--
   <link rel="stylesheet" href="./fullcalendar/main.min.css">
   <script src="./fullcalendar/main.min.js" defer></script>
@@ -31,17 +31,14 @@
         <input type="text" class="form-control" name="apellido" id="apellido" required>
         <label for="nombreMascota" class="form-label">Nombre de la Mascota</label>
         <input type="text" class="form-control" name="nombreMascota" id="nombreMascota" required>      
-        <label for="tipoConsulta">Tipo de Consulta: </label>
+        <label for="tipoConsulta" class="form-label">Tipo de Consulta: </label>
         <input type="text" class="form-control" name="tipoConsulta" id="tipoConsulta" required>
         <label for="fecha" class="form-label">Elegir Fecha</label>
         <input type="date" class="form-control" name="fecha" id="fecha" required>
         <label for="horario" class="form-label">Hora</label>
         <input type="time" class="form-control" name="horario" id="horario" required>
        
-        <button id="addBtn">Add</button>
-        
-        
-        
+        <button id="addBtn">Add</button>        
       </div>
 
       <table id="todoTable" class=" todo-block">
@@ -53,6 +50,7 @@
           <td>Fecha</td>
           <td>Horario</td>
           
+          <td>Borrar</td>
         </tr>
       </table>
     </div>
@@ -63,27 +61,27 @@
 
   </div> <!-- class="todo-grid-parent" -->
 
-  <!-- <div class="todo-overlay" id="todo-overlay">
+  <div class="todo-overlay" id="todo-overlay">
     <div class="todo-modal" id="todo-modal">
+      
       <div class="todo-input todo-block">
-        <span>To-do: </span>
-        <input type="text" placeholder="Enter new to-do" id="todo-edit-todo">
-        <span>Category: </span>
-        <input type="text" placeholder="Enter category" list="categoryList"  id="todo-edit-category">
-        <datalist id="categoryList">
-          <option value="Personal"></option>
-          <option value="Work"></option>
-        </datalist>
-        <span>Date:</span>
-        <input type="date" id="todo-edit-date">
-        <span>Time:</span>
-        <input type="time" id="todo-edit-time">
-        <span></span>
-        <button id="changeBtn">Save Change</button>
+        <label for="nombre-edit" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre-edit" id="nombre-edit" required>
+        <label for="apellido-edit" class="form-label">Apellido</label>
+        <input type="text" class="form-control" name="apellido-edit" id="apellido-edit" required>
+        <label for="nombreMascota-edit" class="form-label">Nombre de la Mascota</label>
+        <input type="text" class="form-control" name="nombreMascota-edit" id="nombreMascota-edit" required>      
+        <label for="tipoConsulta-edit">Tipo de Consulta: </label>
+        <input type="text" class="form-control" name="tipoConsulta-edit" id="tipoConsulta-edit" required>
+        <label for="fecha-edit" class="form-label">Elegir Fecha</label>
+        <input type="date" class="form-control" name="fecha-edit" id="fecha-edit" required>
+        <label for="horario-edit" class="form-label">Hora</label>
+        <input type="time" class="form-control" name="horario-edit" id="horario-edit" required>
+        <button id="changeBtn">Guardar Combios</button>
+      <button id="modalCloseBtn">X</button>
       </div>
     </div>
-    <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
-  </div> -->
+  </div>
   
 </body>
 
