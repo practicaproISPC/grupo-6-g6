@@ -18,6 +18,7 @@
   <script src="/My Pet 2.0/static/javascript/otScript.js" defer></script>
 </head>
 
+<<<<<<< HEAD
 <body>
   <h2>Otorgar nuevo Turno</h2>
   <h3>Ingrese los datos del Cliente</h3>
@@ -79,9 +80,98 @@
         <input type="time" class="form-control" name="horario-edit" id="horario-edit" required>
         <button id="changeBtn">Guardar Combios</button>
       <button id="modalCloseBtn">X</button>
+=======
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otorgar Turnos</title>
+  <link rel="stylesheet" href="/My Pet 2.0/static/css/otStyle.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+  <!--
+  <link rel="stylesheet" href="./fullcalendar/main.min.css">
+  <script src="./fullcalendar/main.min.js" defer></script>
+  https://youtu.be/Un5DrBn5gxc
+  -->
+  <script src="/My Pet 2.0/static/javascript/otScript.js" defer></script>
+</head>
+
+<body>
+  <h2>Otorgar nuevo Turno</h2>
+  <h3>Ingrese los datos del Cliente</h3>
+  <div class="todo-grid-parent">
+
+    <div>
+      <div class="todo-input todo-block">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" required>
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" name="apellido" id="apellido" required>
+        <label for="nombreMascota" class="form-label">Nombre de la Mascota</label>
+        <input type="text" class="form-control" name="nombreMascota" id="nombreMascota" required>      
+        <label for="tipoConsulta">Tipo de Consulta: </label>
+        <input type="text" class="form-control" name="tipoConsulta" id="tipoConsulta" required>
+        <label for="fecha" class="form-label">Elegir Fecha</label>
+        <input type="date" class="form-control" name="fecha" id="fecha" required>
+        <label for="horario" class="form-label">Hora</label>
+        <input type="time" class="form-control" name="horario" id="horario" required>
+       
+        <button id="addBtn">Add</button>
+        
+        
+        
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
+      </div>
+
+      <table id="todoTable" class=" todo-block">
+        <tr>
+          <td>Nombre Cliente</td>
+          <td>Apellido Cliente</td>
+          <td>Nombre de la Mascota</td>
+          <td>Tipo de Consulta</td>
+          <td>Fecha</td>
+          <td>Horario</td>
+          
+        </tr>
+      </table>
+    </div>
+<<<<<<< HEAD
+  </div>
+=======
+
+    <div class="todo-calendar  todo-block">
+      <div id='calendar'></div>
+    </div>
+
+  </div> <!-- class="todo-grid-parent" -->
+
+  <!-- <div class="todo-overlay" id="todo-overlay">
+    <div class="todo-modal" id="todo-modal">
+      <div class="todo-input todo-block">
+        <span>To-do: </span>
+        <input type="text" placeholder="Enter new to-do" id="todo-edit-todo">
+        <span>Category: </span>
+        <input type="text" placeholder="Enter category" list="categoryList"  id="todo-edit-category">
+        <datalist id="categoryList">
+          <option value="Personal"></option>
+          <option value="Work"></option>
+        </datalist>
+        <span>Date:</span>
+        <input type="date" id="todo-edit-date">
+        <span>Time:</span>
+        <input type="time" id="todo-edit-time">
+        <span></span>
+        <button id="changeBtn">Save Change</button>
       </div>
     </div>
-  </div>
+    <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
+  </div> -->
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   
 </body>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap');
 
 :root{
@@ -17,6 +18,14 @@
 }
 
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&family=Titillium+Web&display=swap');
+
+.strike {
+  text-decoration: line-through;
+}
+
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 td{
   border: 1px solid black;
   padding: 5px;
@@ -33,6 +42,7 @@ td{
 }
 
 ::-ms-input-placeholder{
+<<<<<<< HEAD
   color: #0C479D;
 }
 
@@ -51,10 +61,31 @@ input {
 h3 {
   color:#454150;
   font-family: 'Cabin', sans-serif;
+=======
+  color: #ed6a5e;
+}
+
+::-webkit-input-placeholder{
+  color: #ed6a5e;
+}
+
+::placeholder{
+  color: #ed6a5e;
+}
+
+input {
+  color:#a11e12;
+}
+
+h3 {
+  color:#a11e12;
+  font-family: 'Rowdies', cursive;
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 }
 
 
 body{
+<<<<<<< HEAD
   background-color: #F5F5F5;
   font-family: 'Varta', sans-serif;
 }
@@ -87,13 +118,32 @@ button:hover{
 
 @media screen and (max-width: 767px) {
 
+=======
+
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.todo-block{
+  border: 1px solid #ff8e72;
+  padding: 1rem;
+  border-radius: 20px;
+  color: #a11e12;
+}
+
+@media screen and (max-width: 767px) {
+  /* for mobile or small screen device */
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   #todoTable, .todo-calendar{
     margin-top: 1rem;
   }
 }
 
 @media screen and (min-width: 768px) {
+<<<<<<< HEAD
   
+=======
+  /* for tablets or laptops or desktops */
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   .todo-grid-parent{
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -103,7 +153,10 @@ button:hover{
   #calendar{
     position: sticky;
     top: 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   }
 }
 
@@ -126,10 +179,19 @@ button:hover{
 .todo-modal{
   min-width: 50vw;
   height: 50vh;
+<<<<<<< HEAD
   background-color: #ffd6cc;
 }
 
 .modalCloseBtn{
+=======
+  /*border: 1px solid green;*/
+  background-color: #ffd6cc;
+}
+
+.todo-modal-close-btn{
+  background-color: red;
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -138,7 +200,12 @@ button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   border-radius: 50% important!;
+=======
+  border-radius: 50%;
+  color: white;
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   font-weight: bold;
 }
 
@@ -148,7 +215,26 @@ button:hover{
 }
 
 #todoTable tr:nth-child(even) {
+<<<<<<< HEAD
   background-color: #FFE4E9;
 }
 
 
+=======
+  background-color: #ffd6cc;
+}
+
+button{
+  background-color: #ffd6cc;
+  color: #a11e12;
+  border: 1px outset #ed6a5e;
+}
+
+button:active{
+  border: 1px inset #ed6a5e;
+}
+
+button:hover{
+  background-color: #ffad99;
+}
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa

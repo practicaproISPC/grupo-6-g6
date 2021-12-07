@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+// To-do List #7 localStorage - Learning vanilla JavaScript via mini-projects
+// https://www.youtube.com/watch?v=FUnowGWhSxw&list=PLkqwj9vc20pUitqvZrLPk-hTNv63EJqwg&index=7&ab_channel=GordonChan
+
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 otScriptMain();
 
 function otScriptMain() {
@@ -10,18 +16,28 @@ function otScriptMain() {
     dateInput,
     timeInput,
     addButton,
+<<<<<<< HEAD
     todoList = [],
     calendar,
     editBtn,
     modalCloseButton,
     changeButton,
     todoTable;
+=======
+    todoTable,
+    todoList = [],
+    calendar;
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 
   getElements();
   addListeners();
   initCalendar();
   load();
+<<<<<<< HEAD
   renderRows(todoList);
+=======
+  renderRows();
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 
   function getElements() {
     inputElem = document.getElementsByTagName("input")[0];
@@ -31,16 +47,24 @@ function otScriptMain() {
     dateInput = document.getElementById("fecha");
     timeInput = document.getElementById("horario");
     addButton = document.getElementById("addBtn");
+<<<<<<< HEAD
     modalCloseButton = document.getElementById("modalCloseBtn");
     changeButton = document.getElementById("changeBtn");
     todoTable = document.getElementById("todoTable");
     editBtn = document.getElementById("editBtn");
+=======
+    todoTable = document.getElementById("todoTable");
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   }
 
   function addListeners() {
     addButton.addEventListener("click", addEntry, false);
+<<<<<<< HEAD
     document.getElementById("todoTable").addEventListener("click", onTableClicked, false);
 
+=======
+    
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   }
 
   function addEntry(event) {
@@ -75,12 +99,18 @@ function otScriptMain() {
     save();
 
     
+<<<<<<< HEAD
     
   }
 
 
 
 
+=======
+  }
+
+
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   function save() {
     let stringified = JSON.stringify(todoList);
     localStorage.setItem("todoList", stringified);
@@ -89,14 +119,26 @@ function otScriptMain() {
   function load() {
     let retrieved = localStorage.getItem("todoList");
     todoList = JSON.parse(retrieved);
+<<<<<<< HEAD
+=======
+    //console.log(typeof todoList)
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
     if (todoList == null)
       todoList = [];
   }
   
+<<<<<<< HEAD
   function renderRows(arr) {
     arr.forEach(todoObj => {
       renderRow(todoObj);
     })
+=======
+  function renderRows() {
+    todoList.forEach(todoObj => {
+      renderRow(todoObj);
+    })
+    
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
   }
 
   function renderRow({
@@ -107,7 +149,11 @@ function otScriptMain() {
     fechaTurno: dateValue,
     horarioTurno: timeValue,
     id}){
+<<<<<<< HEAD
     
+=======
+    // add a new row
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
 
     let table = document.getElementById("todoTable");
 
@@ -118,8 +164,13 @@ function otScriptMain() {
      let tdElem1 = document.createElement("td");
      tdElem1.innerText = inputValue;
      trElem.appendChild(tdElem1);
+<<<<<<< HEAD
      
     // apellido cell
+=======
+ 
+     // apellido cell
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
      let tdElem2 = document.createElement("td");
      tdElem2.innerText = inputValue2;
      trElem.appendChild(tdElem2);
@@ -144,6 +195,7 @@ function otScriptMain() {
      timeElem.innerText = timeValue;
      trElem.appendChild(timeElem);
 
+<<<<<<< HEAD
 
     // delete cell
     let btnElem = document.createElement("button");
@@ -265,19 +317,69 @@ function otScriptMain() {
         eventBackgroundColor: "#454150",
         eventTextColor: "#FFE4E9",
         eventBorderColor: "#45B6CC",
+=======
+     
+     addEvent({
+       
+      title: inputValue ,
+
+      start: dateValue,  
+     });
+  }
+
+  function formatDate(date){
+    let dateObj = new Date(date);
+    let formattedDate = dateObj.toLocaleString("es-AR", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    return formattedDate;
+  }
+
+  function _uuid() {
+    var d = Date.now();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+      d += performance.now(); //use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+  function initCalendar(){
+    
+      var calendarEl = document.getElementById('calendar');
+    
+      calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        initialDate: '2021-11-07',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        events: [],
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
       });
     
       calendar.render();
     }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
     function addEvent(event){
       calendar.addEvent(event);
     }
   
 
+<<<<<<< HEAD
 
 
   function showEditModalBox(event){
@@ -355,3 +457,6 @@ function otScriptMain() {
   }
 
 } /*final de todoMain*/
+=======
+}
+>>>>>>> f12d305d9f8349c5cf8349e47dcdfddced59c7fa
