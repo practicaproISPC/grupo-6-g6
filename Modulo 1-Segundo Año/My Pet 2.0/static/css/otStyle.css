@@ -1,8 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Rowdies&family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap');
 
-.strike {
-  text-decoration: line-through;
+:root{
+  --fuenteMarca: 'Cabin', sans-serif; 
+  --fuenteBase: 'Varta', sans-serif;  /* PARA BAJARLAS EN EL .HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Varta:wght@400;700&display=swap" rel="stylesheet">*/
+  
+  --colorFB: #454150;              /* color Fuente de textos Base  */
+  --colorFVC: #45B6CC;             /* color Fuente Celeste, para Vinculos de la Página, y hover de las nav  */
+  --colorFVR: #FFE4E9;             /* color Fuente Rosa, para Vinculos de las Nav, y Hover de la Página  */  
+  --bcolorB: #F5F5F5;              /*backgrond color Base, es decir, de TODA la página*/
+  --bcolorNyV: #454150;            /* background color de las Navs y los Vinculos de la Página*/
+  --azulPaleta: #0C479D;           /*color extra*/
+  --fucsiaPaleta: #FC6294;         /*color extra*/
+  --cremaPaleta: #FCF5E3;          /*color extra*/
 }
+
 
 td{
   border: 1px solid black;
@@ -20,38 +33,57 @@ td{
 }
 
 ::-ms-input-placeholder{
-  color: #ed6a5e;
+  color: #0C479D;
 }
 
 ::-webkit-input-placeholder{
-  color: #ed6a5e;
+  color: #0C479D;
 }
 
 ::placeholder{
-  color: #ed6a5e;
+  color: #0C479D;
 }
 
 input {
-  color:#a11e12;
+  color:#454150;
 }
 
 h3 {
-  color:#a11e12;
-  font-family: 'Rowdies', cursive;
+  color:#454150;
+  font-family: 'Cabin', sans-serif;
 }
 
 
 body{
+  background-color: #F5F5F5;
+  font-family: 'Varta', sans-serif;
+}
 
-  font-family: 'Titillium Web', sans-serif;
+button{
+  background-color: #454150;
+  color: #FFE4E9;
+  border: 1px outset #FFE4E9;
+}
+
+button:active{
+  border: 1px inset #454150;
+}
+
+button:hover{
+  color: #454150;
+  font-weight: 900;
+  background-color: #45B6CC;
 }
 
 .todo-block{
-  border: 1px solid #ff8e72;
+  border: 1px solid #454150;
   padding: 1rem;
   border-radius: 20px;
-  color: #a11e12;
+  color: #454150;
 }
+
+
+
 
 @media screen and (max-width: 767px) {
   /* for mobile or small screen device */
@@ -71,6 +103,7 @@ body{
   #calendar{
     position: sticky;
     top: 0;
+
   }
 }
 
@@ -97,8 +130,7 @@ body{
   background-color: #ffd6cc;
 }
 
-.todo-modal-close-btn{
-  background-color: red;
+.modalCloseBtn{
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -107,8 +139,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  color: white;
+  border-radius: 50% important!;
   font-weight: bold;
 }
 
@@ -118,19 +149,5 @@ body{
 }
 
 #todoTable tr:nth-child(even) {
-  background-color: #ffd6cc;
-}
-
-button{
-  background-color: #ffd6cc;
-  color: #a11e12;
-  border: 1px outset #ed6a5e;
-}
-
-button:active{
-  border: 1px inset #ed6a5e;
-}
-
-button:hover{
-  background-color: #ffad99;
+  background-color: #FFE4E9;
 }
