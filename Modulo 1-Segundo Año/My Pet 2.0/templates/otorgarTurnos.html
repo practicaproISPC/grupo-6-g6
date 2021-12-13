@@ -4,13 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Otorgar Turnos</title>
-  <link rel="stylesheet" href="/Modulo 1-Segundo Año/My Pet 2.0/static/css/otStyle.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="/todo.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
-  <script src="/Modulo 1-Segundo Año/My Pet 2.0/static/javascript/otScript.js" defer></script>
+  <script src='fullcalendar/core/locales/es.js'></script>
+  
+  <!--
+  <link rel="stylesheet" href="./fullcalendar/main.min.css">
+  <script src="./fullcalendar/main.min.js" defer></script>
+  https://youtu.be/Un5DrBn5gxc
+  -->
+  <script src="/todo.js" defer></script>
 </head>
 
 <body>
@@ -19,32 +26,34 @@
   <div class="todo-grid-parent">
 
     <div>
-      <div class="todo-input todo-block">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" name="nombre" id="nombre" required>
-        <label for="apellido" class="form-label">Apellido</label>
-        <input type="text" class="form-control" name="apellido" id="apellido" required>
-        <label for="nombreMascota" class="form-label">Nombre de la Mascota</label>
-        <input type="text" class="form-control" name="nombreMascota" id="nombreMascota" required>      
-        <label for="tipoConsulta" class="form-label">Tipo de Consulta: </label>
-        <input type="text" class="form-control" name="tipoConsulta" id="tipoConsulta" required>
-        <label for="fecha" class="form-label">Elegir Fecha</label>
-        <input type="date" class="form-control" name="fecha" id="fecha" required>
-        <label for="horario" class="form-label">Hora</label>
-        <input type="time" class="form-control" name="horario" id="horario" required>
-       
-        <button id="addBtn">Add</button>        
+      <div class=" todo-block">
+        <form class="todo-form">  
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="nombre" required>
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" name="apellido" id="apellido" required>
+          <label for="nombreMascota" class="form-label">Nombre de la Mascota</label>
+          <input type="text" class="form-control" name="nombreMascota" id="nombreMascota" required>      
+          <label for="tipoConsulta" class="form-label">Tipo de Consulta: </label>
+          <input type="text" class="form-control" name="tipoConsulta" id="tipoConsulta" required>
+          <label for="fecha" class="form-label">Elegir Fecha</label>
+          <input type="date" class="form-control" name="fecha" id="fecha" required>
+          <label for="horario" class="form-label">Hora</label>
+          <input type="time" class="form-control" name="horario" id="horario" required>
+             
+        </form>
+        <button class="addBtn" id="addBtn">Add</button>
       </div>
 
       <table id="todoTable" class=" todo-block">
-        <tr>
+        <tr class="headerTabla">
           <td>Nombre Cliente</td>
           <td>Apellido Cliente</td>
           <td>Nombre de la Mascota</td>
           <td>Tipo de Consulta</td>
           <td>Fecha</td>
           <td>Horario</td>
-          
+          <td>Editar</td>
           <td>Borrar</td>
         </tr>
       </table>
@@ -59,7 +68,8 @@
   <div class="todo-overlay" id="todo-overlay">
     <div class="todo-modal" id="todo-modal">
       
-      <div class="todo-input todo-block">
+      <div class="todo-block">
+        <form class="todo-form">
         <label for="nombre-edit" class="form-label">Nombre</label>
         <input type="text" class="form-control" name="nombre-edit" id="nombre-edit" required>
         <label for="apellido-edit" class="form-label">Apellido</label>
@@ -72,13 +82,19 @@
         <input type="date" class="form-control" name="fecha-edit" id="fecha-edit" required>
         <label for="horario-edit" class="form-label">Hora</label>
         <input type="time" class="form-control" name="horario-edit" id="horario-edit" required>
-        <button id="changeBtn">Guardar Combios</button>
-      <button id="modalCloseBtn">X</button>
-      </div>
+        </form>
+        <button class="changeBtn" id="changeBtn">Guardar Cambios</button>
+        </div>
+        <div>
+        <button class="modalCloseBtn" id="modalCloseBtn">X</button>
+        </div>
+      
     </div>
   </div>
+  
     
 
-
-
+  
 </body>
+
+</html>
