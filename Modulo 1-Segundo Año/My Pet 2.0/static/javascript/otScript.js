@@ -1,9 +1,7 @@
-
 otScriptMain();
 
 function otScriptMain() {
   
-
 
   let inputElem,
     inputElem2,
@@ -42,12 +40,13 @@ function otScriptMain() {
   function addListeners() {
     addButton.addEventListener("click", addEntry, false);
     document.getElementById("todoTable").addEventListener("click", onTableClicked, false);
-    
-    //editBtn.addEventListener("click", showEditModalBox, false);
-    //document.getElementById("changeBtn").addEventListener("click", comminEdit, false);
+    //document.addEventListener("click", showEditModalBox, false );
     document.getElementById("modalCloseBtn").addEventListener("click", closeEditModalBox, false);
+    //editBtn.addEventListener("click", showEditModalBox, false);
+    changeBtn.addEventListener("click", commitEdit, false);
+    //
     //part 17 event delegation
-    document.getElementById("todoTable").addEventListener("click", onTableClicked, false)
+    
   }
 
   function addEntry(event) {
@@ -126,7 +125,6 @@ function otScriptMain() {
      let tdElem1 = document.createElement("td");
      tdElem1.innerText = inputValue;
      trElem.appendChild(tdElem1);
-    //For edit on cel feature
      
      
     // apellido cell
@@ -148,6 +146,7 @@ function otScriptMain() {
      let dateElem = document.createElement("td");
      dateElem.innerText = formatDate(dateValue);
      trElem.appendChild(dateElem);
+
  
      // time cell
      let timeElem = document.createElement("td");
@@ -155,14 +154,14 @@ function otScriptMain() {
      trElem.appendChild(timeElem);
 
       // edit cell
-    /* let editBtn = document.createElement("button");
+     let editBtn = document.createElement("button");
     editBtn.innerText = "edit";
     editBtn.className = "material-icons";
     editBtn.addEventListener("click", toEditItem, false);
     editBtn.dataset.id = id;
     let editTd = document.createElement("td");
     editTd.appendChild(editBtn);
-    trElem.appendChild(editTd); */
+    trElem.appendChild(editTd); 
 
     // delete cell
     let btnElem = document.createElement("button");
@@ -184,28 +183,19 @@ function otScriptMain() {
 
     
     tdElem1.dataset.id = id;
-    //tdElem1.addEventListener("dblclick", allowEdit, false);
     tdElem2.dataset.id = id;
     tdElem3.dataset.id = id;
     tdElem4.dataset.id = id;
     dateElem.dataset.id = id;
     timeElem.dataset.id = id;
-    
-
-    tdElem1.dataset.editable = true;
-    tdElem2.dataset.editable = true;
-    tdElem3.dataset.editable = true;
-    tdElem4.dataset.editable = true;
-    dateElem.dataset.editable = true;
-    timeElem.dataset.editable = true;
-    
+        
     tdElem1.dataset.type = "nombreCliente";
     tdElem2.dataset.type = "apellidoCliente";
     tdElem3.dataset.type = "nombreMascota";
     tdElem4.dataset.type = "tipoConsulta";
     dateElem.dataset.type = "fechaTurno";
     dateElem.dataset.value = dateValue;
-    timeElem.dataset.type = "horarioTurno";
+    timeElem.dataset.type = "horarioTurno"; 
    
   
     function deleteItem() {
@@ -219,38 +209,8 @@ function otScriptMain() {
       calendar.getEventById(this.dataset.id).remove();
     }
 
+    
 
-    function allowEdit(event){
-      let currentText = event.target.innerText;
-      event.target.innerText = "";
-
-      let tempTextBox = document.createElement("input");
-      event.target.appendChild(tempTextBox);
-      tempTextBox.value = currentText;
-
-      tempTextBox.addEventListener("change", onChange, false);
-
-      function onChange(event){
-        let changedValue = event.target.value;
-        let id = event.target.parentNode.dataset.id;
-        //console.log(changedValue)
-        calendar.getEventById(id).remove();
-        
-        todoList.forEach(todoObj =>{
-          if(todoObj.id == id){
-            todoObj.nombreCliente=changedValue;
-            addEvent({
-              id: id,
-              title: changedValue,
-              start: todoObj.fechaTurno,
-            });
-          }
-        });
-        save();
-
-        event.target.parentNode.innerText = changedValue;
-      }
-    }
 
   }
   /*Acá termina renderRow*/
@@ -273,6 +233,7 @@ function otScriptMain() {
       var calendarEl = document.getElementById('calendar');
       
       calendar = new FullCalendar.Calendar(calendarEl, {
+      locale: 'es',
       timeZone: 'UTC',
       initialView: 'dayGridMonth',
       initialDate: '2021-12-07',
@@ -282,9 +243,12 @@ function otScriptMain() {
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
         events: [],
-        /* eventClick: function(info) {
+
+        eventClick: function(info) {
           toEditItem(info.event);
-        }, */
+         
+        },
+        
         eventBackgroundColor: "#454150",
         eventTextColor: "#FFE4E9",
         eventBorderColor: "#45B6CC",
@@ -302,19 +266,20 @@ function otScriptMain() {
   
 
 
-
-  function showEditModalBox(event){
-     document.getElementById("todo-overlay").classList.add("slidedIntoView");
-  }
   
-  function closeEditModalBox(event){
-    document.getElementById("todo-overlay").classList.remove("slidedIntoView");
-  }
 
   function onTableClicked(event){
     if(event.target.matches("td") && event.target.dataset.editable  == "true"){
       let tempInputElem;
       switch(event.target.dataset.type){
+        
+        case "nombreCliente" :
+        case "apellidoCliente":
+        case "nombreMascota":
+        case "tipoConsulta" :
+          tempInputElem = document.createElement("input");
+          tempInputElem.value = event.target.innerText;
+          break;
         case "fechaTurno" :
           tempInputElem = document.createElement("input");
           tempInputElem.type = "date";
@@ -322,17 +287,8 @@ function otScriptMain() {
           break;
         case "horarioTurno" :
           tempInputElem = document.createElement("input");
-          console.log("horarioTurno");
-          tempInputElem.type = "horarioTurno";
+          tempInputElem.type = "time";
           tempInputElem.value = event.target.innerText;
-          break;
-        case "nombreCliente" :
-        case "apellidoCliente":
-        case "nombreMascota":
-        case "tipoConsulta" :
-          tempInputElem = document.createElement("input");
-          tempInputElem.value = event.target.innerText;
-          
           break;
           
         default:
@@ -346,13 +302,15 @@ function otScriptMain() {
     function onChange(event){
       let changedValue = event.target.value;
       let id = event.target.parentNode.dataset.id;
-     
+      let type = event.target.parentNode.dataset.type;
+      
       //remove from calendar
       calendar.getEventById(id).remove();
       
       todoList.forEach(todoObj =>{
         if(todoObj.id == id){
-          todoObj[event.target.parentNode.dataset.type] = changedValue
+          todoObj[type] = changedValue;
+          
           addEvent({
             id: id,
             title: todoObj.nombreCliente,
@@ -362,19 +320,131 @@ function otScriptMain() {
       });
       save();
 
-      event.target.parentNode.innerText = changedValue;
+
+      if(type == "date"){
+        event.target.parentNode.innerText = formatDate(changedValue);
+      }else{
+        event.target.parentNode.innerText = changedValue;
+      }
     }
   }
 
   function formatDate(fechaTurno){
     let dateObj = new Date(fechaTurno);
-     let formattedDate = dateObj.toLocaleString("es-AR", {
+    let formattedDate = dateObj.toLocaleString("es", {
       timeZone: 'UTC',
-      month: "long",
       day: "numeric",
+      month: "long",
       year: "numeric",
       });
     return formattedDate;
   }
+
+  function showEditModalBox(event){
+    document.getElementById("todo-overlay").classList.add("slidedIntoView");
+  }
+ 
+  function closeEditModalBox(event){
+    document.getElementById("todo-overlay").classList.remove("slidedIntoView");
+  }
+
+  function commitEdit(event){
+    closeEditModalBox();
+
+    let id= event.target.dataset.id;
+    let nombreCliente = document.getElementById("nombre-edit").value;
+    let apellidoCliente = document.getElementById("apellido-edit").value;
+    let nombreMascota = document.getElementById("nombreMascota-edit").value;
+    let tipoConsulta =  document.getElementById("tipoConsulta-edit").value;
+    let fechaTurno = document.getElementById("fecha-edit").value;
+    let horarioTurno= document.getElementById("horario-edit").value;
+
+    calendar.getEventById(id).remove();
+
+    for( let i = 0; i < todoList.length; i++){
+      if(todoList[i].id == id){
+        todoList[i] = {
+          id: id,
+          nombreCliente: nombreCliente,
+          apellidoCliente: apellidoCliente,
+          nombreMascota: nombreMascota,
+          tipoConsulta: tipoConsulta,
+          fechaTurno: fechaTurno,
+          horarioTurno: horarioTurno,
+        };
+        addEvent({
+          id: id,
+          title: todoList[i].nombreCliente,
+          start: todoList[i].fechaTurno,
+        });
+      }
+    }  
+      
+    save();
+
+    //Update la tabla
+    let tdNodeList = todoTable.querySelectorAll("td");
+    for(let i = 0; i < tdNodeList.length; i++){
+      if(tdNodeList[i].dataset.id == id){
+        let type = tdNodeList[i].dataset.type;
+        switch(type){
+          case "nombreCliente" :
+            tdNodeList[i].innerText = nombreCliente;
+            break;
+          case "apellidoCliente":
+            tdNodeList[i].innerText = apellidoCliente;
+            break;
+          case "nombreMascota":
+            tdNodeList[i].innerText = nombreMascota;
+            break;
+          case "tipoConsulta" :
+            tdNodeList[i].innerText = tipoConsulta;
+            break;
+          case "fechaTurno" :
+            tdNodeList[i].innerText = formatDate(fechaTurno);
+            break;
+          case "horarioTurno" :
+            tdNodeList[i].innerText = horarioTurno;
+            break;
+          
+        }
+      }
+    }
+
+   /*  if(type == "date"){
+      event.target.parentNode.innerText = formatDate(changedValue);
+    }else{
+      event.target.parentNode.innerText = changedValue;
+    } */
+  }
+
+  function toEditItem(event){
+    showEditModalBox();
+
+    let id;
+    if (event.target) //evento de la tabla, botón "edit"
+      id = event.target.dataset.id;
+    else //evento del calendario
+      id = event.id;
+    
+    
+    preFillEditForm(id);
+  }
+
+  function preFillEditForm(id){
+    let result= todoList.find(todoObj => todoObj.id == id);
+
+    let {nombreCliente, apellidoCliente, nombreMascota, tipoConsulta, fechaTurno, horarioTurno} = result;
+    document.getElementById("nombre-edit").value = nombreCliente;
+    document.getElementById("apellido-edit").value = apellidoCliente;
+    document.getElementById("nombreMascota-edit").value = nombreMascota;
+    document.getElementById("tipoConsulta-edit").value = tipoConsulta;
+    document.getElementById("fecha-edit").value = fechaTurno;
+    document.getElementById("horario-edit").value = horarioTurno;
+
+    changeBtn.dataset.id = id;
+  }
+
+
 
 } /*final de todoMain*/
